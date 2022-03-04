@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RunService": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "apikey": "e6aef8075a8706a9ebfd9b41353cf03844179179f887be308394c1d4ef0a74460f12b539b031f952c99b4effa2e9cb297ca87b53b6cc260c8ea5a8c4"
+      }
+    }
+  }
+}
