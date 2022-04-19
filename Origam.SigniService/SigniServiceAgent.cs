@@ -34,23 +34,23 @@ namespace Origam.SigniService
             apikey = Environment.GetEnvironmentVariable(variable: "apikey")??"";
             if (apikey == "")
             {
-                throw new Exception("Api-key není nastavený");
+                throw new Exception("Api-key does not set");
             }
             if (Parameters["signing_order"] == null)
             {
-                throw new Exception("signing_order nemůže být prázdný");
+                throw new Exception("signing_order can not be empty.");
             }
             if (Parameters["autosign_proposers"] == null)
             {
-                throw new Exception("autosign_proposers nemůže být prázdný");
+                throw new Exception("autosign_proposers can not be empty.");
             }
             if (Parameters["people"] == null)
             {
-                throw new Exception("people nemůžou být prázdný");
+                throw new Exception("people can not be empty.");
             }
             if (Parameters["template"] == null)
             {
-                throw new Exception("template nemůže být prázdný");
+                throw new Exception("template can not be empty.");
             }
         }
 
