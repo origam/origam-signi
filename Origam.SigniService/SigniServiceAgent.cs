@@ -34,23 +34,7 @@ namespace Origam.SigniService
             apikey = Environment.GetEnvironmentVariable(variable: "apikey")??"";
             if (apikey == "")
             {
-                throw new Exception("Api-key does not set");
-            }
-            if (Parameters["signing_order"] == null)
-            {
-                throw new Exception("signing_order can not be empty.");
-            }
-            if (Parameters["autosign_proposers"] == null)
-            {
-                throw new Exception("autosign_proposers can not be empty.");
-            }
-            if (Parameters["people"] == null)
-            {
-                throw new Exception("people can not be empty.");
-            }
-            if (Parameters["template"] == null)
-            {
-                throw new Exception("template can not be empty.");
+                throw new Exception("Api-key is not set");
             }
         }
 
@@ -157,8 +141,8 @@ namespace Origam.SigniService
         private JObject CreateSettingsPart()
         {
                 JObject jsonS = new();
-                    var signing_order = new JProperty("signing_order", Parameters["signing_order"]);
-                    var autosign_proposers = new JProperty("autosign_proposers", Parameters["autosign_proposers"]);
+                    var signing_order = new JProperty("signing_order", Parameters.Get<string>("signing_order"));
+                    var autosign_proposers = new JProperty("autosign_proposers", Parameters.Get<string>("autosign_proposers"));
                     jsonS.Add(signing_order);
                     jsonS.Add(autosign_proposers);
             return jsonS;
